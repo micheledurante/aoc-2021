@@ -26,8 +26,8 @@ pub fn part_2() {
 
     print_solution(
         2,
-        1,
-        format!("The product of the final aim ({aim}), forward ({fw}) and depth ({de}) positions is {p}.").as_str(),
+        2,
+        format!("the product of the final aim ({aim}), forward ({fw}) and depth ({de}) positions is {p}.").as_str(),
     );
 }
 
@@ -51,6 +51,6 @@ pub fn part_1() {
     print_solution(
         2,
         1,
-        format!("The product of the final forward ({fw}) and depth ({de}) positions is {p}.").as_str(),
+        format!("the product of the final forward ({fw}) and depth ({de}) positions is {p}.").as_str(),
     );
 }

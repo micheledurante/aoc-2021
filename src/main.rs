@@ -6,6 +6,7 @@ use std::io::{BufRead, BufReader};
 
 mod day_01;
 mod day_02;
+mod day_03;
 
 const AOC_2021_SRC_PATH: &str = "AOC_2021_SRC_PATH";
 
@@ -30,4 +31,6 @@ fn main() {
     day_01::part_2();
     day_02::part_1();
     day_02::part_2();
+    day_03::part_1();
+    day_03::part_2();
 }
