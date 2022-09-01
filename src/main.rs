@@ -1,12 +1,13 @@
 #![feature(int_roundings)]
 
-use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
+use std::{env, fs};
 
 mod day_01;
 mod day_02;
 mod day_03;
+mod day_04;
 
 const AOC_2021_SRC_PATH: &str = "AOC_2021_SRC_PATH";
 
@@ -32,5 +33,20 @@ fn main() {
     day_02::part_1();
     day_02::part_2();
     day_03::part_1();
-    day_03::part_2();
+    let day_01_part_1 = day_04::part_1(
+        fs::read_to_string(env::var(AOC_2021_SRC_PATH).unwrap() + "day_04.txt")
+            .unwrap()
+            .as_str(),
+    );
+    print_solution(
+        4,
+        1,
+        format!(
+            "the winning number ({0}) times the sum of all unmarked numbers ({1}) is {2}.",
+            day_01_part_1.0,
+            day_01_part_1.1,
+            day_01_part_1.0 * day_01_part_1.1
+        )
+        .as_str(),
+    );
 }

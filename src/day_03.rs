@@ -15,19 +15,24 @@ fn get_ones_count(reports: Vec<&[u8]>) -> Vec<i32> {
     ones_count
 }
 
-fn get_most_common_bits(reports: Vec<&[u8]>, rounded_half: i32) -> Vec<u8> {
+fn get_most_common_bits(reports: Vec<&[u8]>, upper: i32) -> Vec<u8> {
     let mut most_common_bits: Vec<u8> = vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let half = reports.len().div_floor(2) as i32;
 
     for (i, &u) in get_ones_count(reports).iter().enumerate() {
-        if u > rounded_half {
+        if u > half {
             most_common_bits[i] = 1
+        } else if u == half {
+            if upper == 1 {
+                most_common_bits[i] = 1
+            }
         }
     }
 
     most_common_bits
 }
 
-fn get_as_u32(bits: &Vec<u8>) -> u32 {
+fn get_as_u32(bits: Vec<u8>) -> u32 {
     ((bits[11] as u32) << 0)
         | ((bits[10] as u32) << 1)
         | ((bits[9] as u32) << 2)
@@ -48,22 +53,17 @@ fn flip_bits(bits: Vec<u8>) -> Vec<u8> {
         .collect()
 }
 
-pub fn part_2() {}
-
 pub fn part_1() {
     let reports = read_puzzle_input("day_03.txt");
-    let most_common_bits = get_most_common_bits(
-        reports.iter().map(|x| x.as_bytes()).collect(),
-        (reports.len().div_floor(2)) as i32,
-    );
-    let gamma = get_as_u32(&most_common_bits);
-    let epsilon = get_as_u32(&flip_bits(most_common_bits));
+    let most_common_bits = get_most_common_bits(reports.iter().map(|x| x.as_bytes()).collect(), 1);
+    let gamma = get_as_u32(most_common_bits.to_vec());
+    let epsilon = get_as_u32(flip_bits(most_common_bits));
 
     print_solution(
         3,
         1,
         format!(
-            "power consumption, product of γ ({0}) and ε ({1}) is {2}.",
+            "the power consumption, product of γ ({0}) and ε ({1}) is {2}.",
             gamma,
             epsilon,
             gamma * epsilon
@@ -88,16 +88,36 @@ mod day_01_tests {
     fn get_most_common_bits_tests() {
         assert_eq!(
             vec![1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0],
-            get_most_common_bits(vec![b"100100110110", b"101110110110", b"010100010100"], 1)
+            get_most_common_bits(
+                vec![
+                    b"100100110110",
+                    b"101110110110",
+                    b"010100010100",
+                    b"000101011010"
+                ],
+                1
+            )
+        );
+        assert_eq!(
+            vec![1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0],
+            get_most_common_bits(
+                vec![
+                    b"100100110110",
+                    b"101110110110",
+                    b"100110101010",
+                    b"100100010100"
+                ],
+                0
+            )
         )
     }
 
     #[test]
     fn get_as_u32_tests() {
-        assert_eq!(0, get_as_u32(&vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
-        assert_eq!(1, get_as_u32(&vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]));
-        assert_eq!(2, get_as_u32(&vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]));
-        assert_eq!(3, get_as_u32(&vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]));
+        assert_eq!(0, get_as_u32(vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
+        assert_eq!(1, get_as_u32(vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]));
+        assert_eq!(2, get_as_u32(vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]));
+        assert_eq!(3, get_as_u32(vec![0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]));
     }
 
     #[test]
