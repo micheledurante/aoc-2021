@@ -1,7 +1,7 @@
 # AoC 2021
 Needs nightly builds for unstable features. If using rustup, install with `rustup toolchain install nightly && rustup default nightly`
 
-Run by providing a day with `cargo run -- 1` or run all with `cargo run`
+Run a day `cargo run -- 1` or run all `cargo run`
 
 ## Solutions
 - Day 1, part 1: there are 1552 depth measurement increases in the set.
