@@ -1,7 +1,5 @@
 # AoC 2021
-Needs nightly builds for unstable features. 
-
-If using rustup, install with `rustup toolchain install nightly && rustup default nightly`
+Needs nightly builds for unstable features. If using rustup, install with `rustup toolchain install nightly && rustup default nightly`
 
 Run by providing a day with `cargo run -- 1` or run all with `cargo run`
 
