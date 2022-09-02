@@ -4,7 +4,7 @@ const FORWARD: &str = "forward";
 const DOWN: &str = "down";
 
 pub fn part_2() {
-    let cmds = read_puzzle_input("day_02.txt");
+    let cmds = read_puzzle_input("./data/day_02.txt");
     let mut fw: i64 = 0;
     let mut de: i64 = 0;
     let mut aim: i64 = 0;
@@ -32,7 +32,7 @@ pub fn part_2() {
 }
 
 pub fn part_1() {
-    let cmds = read_puzzle_input("day_02.txt");
+    let cmds = read_puzzle_input("./data/day_02.txt");
     let mut fw: i64 = 0;
     let mut de: i64 = 0;
 

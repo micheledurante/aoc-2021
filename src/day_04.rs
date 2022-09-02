@@ -118,14 +118,13 @@ pub fn part_1(input: &str) -> (i32, i32) {
 
 #[cfg(test)]
 mod day_04_tests {
+    use std::fs;
     use super::*;
-    use crate::AOC_2021_SRC_PATH;
-    use std::{env, fs};
 
     #[test]
     fn part_1_test() {
         let result = part_1(
-            fs::read_to_string(env::var(AOC_2021_SRC_PATH).unwrap() + "day_04_test.txt")
+            fs::read_to_string(r"./data/day_04_test.txt")
                 .unwrap()
                 .as_str(),
         );

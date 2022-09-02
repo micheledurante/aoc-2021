@@ -5,7 +5,7 @@ fn div_by_three(input: usize) -> usize {
 }
 
 pub fn part_1() -> () {
-    let scans = read_puzzle_input("day_01.txt");
+    let scans = read_puzzle_input("./data/day_01.txt");
     let mut no_of_increases = 0;
 
     for i in (1..scans.len() - 1).rev() {
@@ -22,7 +22,7 @@ pub fn part_1() -> () {
 }
 
 pub fn part_2() -> () {
-    let scans = read_puzzle_input("day_01.txt");
+    let scans = read_puzzle_input("./data/day_01.txt");
     let mut no_of_increases = 0;
 
     for i in 0..(div_by_three(scans.len()) * 3) - 1 {

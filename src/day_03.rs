@@ -56,7 +56,7 @@ fn counts_1s(reports: &Vec<&[u8]>, pos: usize) -> i32 {
 }
 
 fn o2_bit_criteria(len: usize, ones: i32) -> u8 {
-    if (2 * ones) / len as i32 >= 1  {
+    if (2 * ones) / len as i32 >= 1 {
         0b1u8
     } else {
         0b0u8
@@ -64,7 +64,7 @@ fn o2_bit_criteria(len: usize, ones: i32) -> u8 {
 }
 
 fn co2_bit_criteria(len: usize, ones: i32) -> u8 {
-    if (2 * ones) / len as i32 >= 1  {
+    if (2 * ones) / len as i32 >= 1 {
         0b0u8
     } else {
         0b1u8
@@ -87,7 +87,12 @@ fn reduce_reports(reports: &Vec<&[u8]>) -> (u32, u32) {
 
         o2_reports.retain(|r| r[i] ^ bit_criteria == 48);
 
-        o2 = get_as_u32(o2_reports[0].iter().map(|&x| if x as u8 == 49 { 1 } else { 0 }).collect());
+        o2 = get_as_u32(
+            o2_reports[0]
+                .iter()
+                .map(|&x| if x as u8 == 49 { 1 } else { 0 })
+                .collect(),
+        );
     }
 
     for i in 0..word_size {
@@ -99,13 +104,15 @@ fn reduce_reports(reports: &Vec<&[u8]>) -> (u32, u32) {
 
         co2_reports.retain(|r| r[i] ^ bit_criteria == 48);
 
-        co2 = get_as_u32(co2_reports[0].iter().map(|&x| if x as u8 == 49 { 1 } else { 0 }).collect());
+        co2 = get_as_u32(
+            co2_reports[0]
+                .iter()
+                .map(|&x| if x as u8 == 49 { 1 } else { 0 })
+                .collect(),
+        );
     }
 
-    (
-        o2,
-        co2,
-    )
+    (o2, co2)
 }
 
 pub fn part_2(input: &str) -> (u32, u32) {
@@ -117,7 +124,7 @@ pub fn part_2(input: &str) -> (u32, u32) {
 }
 
 pub fn part_1() {
-    let reports = read_puzzle_input("day_03.txt");
+    let reports = read_puzzle_input("./data/day_03.txt");
     let most_common_bits = get_most_common_bits(reports.iter().map(|x| x.as_bytes()).collect(), 1);
     let gamma = get_as_u32(most_common_bits.to_vec());
     let epsilon = get_as_u32(flip_bits(most_common_bits));
@@ -138,13 +145,12 @@ pub fn part_1() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::AOC_2021_SRC_PATH;
-    use std::{env, fs};
+    use std::fs;
 
     #[test]
     fn part_2_test() {
         let result = part_2(
-            fs::read_to_string(env::var(AOC_2021_SRC_PATH).unwrap() + "day_03_test.txt")
+            fs::read_to_string("./data/day_03_test.txt")
                 .unwrap()
                 .as_str(),
         );
