@@ -1,0 +1,58 @@
+public static List<int> Evolve(List<int> states, int days)
+        {
+            for (var i = 0; i < days; i++)
+            {
+                // new day
+                var value = states.First();
+                var tmp_day = new List<int>();
+                var tomorrow = new List<int>();
+                var new_states = 0;
+                var counter = 1;
+
+                foreach (var state in states)
+                {
+                    if (counter == states.Count())
+                    {
+                        tmp_day.Add(state);
+                        tomorrow.AddRange(tmp_day.Select(x => x - 1).ToList());
+                    }
+                    else if (state != value)
+                    {
+                        if (value == 0)
+                        {
+                            tomorrow.AddRange(tmp_day.Select(x => 6).ToList());
+                            new_states += tmp_day.Count();
+                        }
+                        else
+                        {
+                            tomorrow.AddRange(tmp_day.Select(x => x - 1).ToList());
+                        }
+
+                        value++;
+                        tmp_day.Clear();
+                    }
+
+                    counter++;
+                    tmp_day.Add(state);
+                }
+
+                for (var y = 0; y < new_states; y++)
+                    tomorrow.Add(8);
+                tomorrow.Sort();
+                states = tomorrow;
+            }
+
+            return states;
+        }
+####################
+
+########
+
+380758
+1710623015163
+ok!
+
+1028895
+
+###########
+

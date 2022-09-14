@@ -1,3 +1,23 @@
-/target
-.idea/
-aoc-2021.iml
+# General
+*.cache
+*.idlk
+*.TMP
+
+#IDE files
+.vs
+
+# VS project
+NiceMeter/bin
+NiceMeter/obj
+NiceMeterTests/bin
+NiceMeterTests/obj
+packages/
+
+#Paket dependency manager
+.paket/
+paket-files/
+
+# coverage
+TestResults/
+*_coverage.xml
+results.xml

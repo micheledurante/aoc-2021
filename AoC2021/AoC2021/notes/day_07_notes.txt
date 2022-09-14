@@ -1,0 +1,70 @@
+
+median_cost	592340	int
+median_cost	592340	int
+
+
+median_point 975
+var median_point = (points.Last().Key - points.First().Key) / 2;
+var cost = points.Select(x => Math.Abs(x.Key - median_point) * x.Value).Sum();
+
+//costs_exp.Add(points.Select(x => Steps(Math.Abs(x.Pos - point.Pos)) * x.Count).Sum());
+costs_exp.Add(points.Select(x => ((Math.Abs(x.Key - point.Key) * (Math.Abs(x.Key - point.Key) + 1)) / 2) * x.Value).Sum());
+
+triangular numbers, n(n + 1) / 2
+
+480572 * (480572 + 1) / 2 = 115474963878
+
+#########
+
+Count = 644
+{[0, 6]}
+{[1, 9]}
+{[2, 3]}
+{[3, 4]}
+{[4, 6]}
+{[5, 3]}
+{[6, 2]}
+{[7, 2]}
+
+Count = 644
+353800
+353802
+353806
+353810
+353816
+353822
+353824
+353842
+353858
+353896
+353910
+
+Count = 644
+0
+325
+7725
+13276
+15715
+22118
+23706
+25841
+31220
+32861
+41695
+
+#########
+
+353800
+----
+310371108
+98119750
+98119749
+98119748
+too high
+
+---
+
+97937160
+97936918
+68725980
+too low

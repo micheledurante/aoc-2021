@@ -1,0 +1,36 @@
+1 - cf
+7 - acf
+4 - bcdf
+8 - abcdefg
+---
+2 - acdeg
+	3 - acdfg
+	5 - abdfg
+---
+	0 - abcefg
+	6 - abdefg
+9 - abcdfg
+
+########
+
+fdb bgfa cedfg abedcf defgba gbaed dagfbce fbged dgabce fb | bf dfbega fb baged
+
+f = f
+b = c
+a = d
+
+#######
+
+fdb bgfa cedfg abedcf defgba gbaed dagfbce fbged dgabce fb | bf dfbega fb baged
+
+7 4 cedfg abedcf defgba gbaed 8 fbged dgabce 1 | 1 dfbega 1 baged
+
+1 [0, 6, 9] 1 [2, 3, 5]
+
+cedfg
+gbaed
+fbged
+
+#########
+
+247
