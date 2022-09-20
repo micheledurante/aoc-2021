@@ -4,32 +4,29 @@
 8 - abcdefg
 ---
 2 - acdeg
-	3 - acdfg
-	5 - abdfg
+3 - acdfg
+5 - abdfg
 ---
-	0 - abcefg
-	6 - abdefg
+0 - abcefg
+6 - abdefg
 9 - abcdfg
+
+a = 7 - 1
 
 ########
 
 fdb bgfa cedfg abedcf defgba gbaed dagfbce fbged dgabce fb | bf dfbega fb baged
-
-f = f
-b = c
-a = d
-
-#######
-
-fdb bgfa cedfg abedcf defgba gbaed dagfbce fbged dgabce fb | bf dfbega fb baged
-
-7 4 cedfg abedcf defgba gbaed 8 fbged dgabce 1 | 1 dfbega 1 baged
-
-1 [0, 6, 9] 1 [2, 3, 5]
+7 4 [2,3,5] [0,6,9] [0,6,9] 2 [0,6,9] [2,3,5] [0,6,9] 1
 
 cedfg
 gbaed
 fbged
+
+cdefg
+abdeg
+bdefg
+
+
 
 #########
 

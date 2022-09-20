@@ -15,15 +15,22 @@ namespace AoC2021
                 .Select(x => x.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries))
                 .Select(
                     y => (
-                        y[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList(),
-                        y[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList()
+                        y[0].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(z => new HashSet<char>(z)).OrderBy(q => q.Count()).ToList(),
+                        y[1].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(z => new HashSet<char>(z)).OrderBy(q => q.Count()).ToList()
                     )
                 )
                 .ToList();
+            var nums = new List<int>();
+
+            foreach (var reading in readings)
+            {
+                
+            }
+
 
             return (
                 readings
-                    .Select(v => v.Item2.Where(x => x.Length == 2 || x.Length == 3 || x.Length == 4 || x.Length == 7).ToList().Count())
+                    .Select(v => v.Item2.Where(x => x.Count() == 2 || x.Count() == 3 || x.Count() == 4 || x.Count() == 7).ToList().Count())
                     .Sum(),
                 0
             );
