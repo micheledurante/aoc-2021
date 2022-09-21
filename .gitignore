@@ -12,6 +12,7 @@ NiceMeter/obj
 NiceMeterTests/bin
 NiceMeterTests/obj
 packages/
+**/bin/*
 
 #Paket dependency manager
 .paket/
