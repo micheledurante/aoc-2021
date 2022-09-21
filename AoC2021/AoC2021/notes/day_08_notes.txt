@@ -1,32 +1,146 @@
-1 - cf
-7 - acf
-4 - bcdf
-8 - abcdefg
+﻿1 - cf		0010010
+7 - acf		1010010
+4 - bcdf	0111010
+8 - abcdefg	1111111
 ---
-2 - acdeg
-3 - acdfg
-5 - abdfg
+2 - acdeg	1011101
+3 - acdfg	1011011
+5 - abdfg	1101011
 ---
-0 - abcefg
-6 - abdefg
-9 - abcdfg
+0 - abcefg	1110111
+6 - abdefg	1101111
+9 - abcdfg	1111011
 
 a = 7 - 1
+[b,d] = 4 - 1
+[b,c,e,f] = (8 - 2) + (8 - 3) + (8 - 5)
+[c,d,e] = (8 - 0) + (8 - 6) + (8 - 9)
+[d,e] = 4 ∆ [b,c,e,f]
+c = [c,d,e] - [d,e]
+d = [b,d] ⋂ [d,e]
+e = [c,d,e] - c - d
+f = 1 - c
+b = [b,d] - d
+g = 8 - 4 - a - e
 
-########
+######
+
+too low
+792608
+776498
+
+allegati.enelenergia@enel.com
+
+abcdefg
+acdeg (b,f)
+abcdefg
+acdfg (b,e)
+abcdefg
+abdfg (c,e)
+
+#######
+https://www.rapidtables.com/math/symbols/Set_Symbols.html
+{ } ⋂ ∪ ⊂ ∈ Ø ℝ
+#######
 
 fdb bgfa cedfg abedcf defgba gbaed dagfbce fbged dgabce fb | bf dfbega fb baged
 7 4 [2,3,5] [0,6,9] [0,6,9] 2 [0,6,9] [2,3,5] [0,6,9] 1
+
+1159
+
+fb (d)
+fbd
 
 cedfg
 gbaed
 fbged
 
-cdefg
-abdeg
-bdefg
+dagfbce
+
+dgabce (f)
+abedcf (g)
+defgba (c)
 
 
+102 'f'
+98 'b'
+
+102 'f'
+100 'd'
+98 'b'
+
+98 'b'
+103 'g'
+102 'f'
+97 'a'
+
+99 'c'
+101 'e'
+100 'd'
+102 'f'
+103 'g'
+
+103 'g'
+98 'b'
+97 'a'
+101 'e'
+100 'd'
+
+102 'f'
+98 'b'
+103 'g'
+101 'e'
+100 'd'
+
+97 'a'
+98 'b'
+101 'e'
+100 'd'
+99 'c'
+102 'f'
+
+100 'd'
+101 'e'
+102 'f'
+103 'g'
+98 'b'
+97 'a'
+
+100 'd'
+103 'g'
+97 'a'
+98 'b'
+99 'c'
+101 'e'
+
+100 'd'
+97 'a'
+103 'g'
+102 'f'
+98 'b'
+99 'c'
+101 'e'
+
+|
+
+98 'b'
+102 'f'
+
+102 'f'
+98 'b'
+
+98 'b'
+97 'a'
+103 'g'
+101 'e'
+100 'd'
+
+100 'd'
+102 'f'
+98 'b'
+101 'e'
+103 'g'
+97 'a'
 
 #########
 
