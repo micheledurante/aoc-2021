@@ -10,6 +10,7 @@
 packages/
 **/bin/*
 **/obj/*
+**/Properties/*
 
 # coverage
 TestResults/
