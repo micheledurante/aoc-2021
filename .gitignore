@@ -4,7 +4,8 @@
 *.TMP
 
 #IDE files
-.vs
+.vs/
+.idea/
 
 # VS project
 packages/
