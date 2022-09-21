@@ -33,3 +33,4 @@ E:\git\aoc-2021\AoC2021Tests\AoC2021Tests\bin\Debug\System.Buffers.dll
 E:\git\aoc-2021\AoC2021Tests\AoC2021Tests\bin\Debug\Data\day06.txt
 E:\git\aoc-2021\AoC2021Tests\AoC2021Tests\bin\Debug\Data\day07.txt
 E:\git\aoc-2021\AoC2021Tests\AoC2021Tests\bin\Debug\Data\day08.txt
+E:\git\aoc-2021\AoC2021Tests\AoC2021Tests\bin\Debug\Data\day09.txt

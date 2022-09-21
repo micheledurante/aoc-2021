@@ -7,7 +7,7 @@ using System.Linq;
 namespace AoC2021Tests
 {
     [TestClass]
-    public class Day05Tests : UnitTest
+    public class Day05Tests
     {
         [TestMethod]
         public void GetPointsTests_VerticalPositive_ShouldReturnPoints()

@@ -7,7 +7,7 @@ using System.Linq;
 namespace AoC2021Tests
 {
     [TestClass]
-    public class Day07Tests : UnitTest
+    public class Day07Tests
     {
         [TestMethod]
         public void Run_GivenInputs_ShoulCorrectlyCalculateNumbers()

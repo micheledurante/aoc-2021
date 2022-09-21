@@ -7,7 +7,7 @@ using System.Linq;
 namespace AoC2021Tests
 {
     [TestClass]
-    public class Day08Tests : UnitTest
+    public class Day08Tests
     {
         private Dictionary<char, char> segments;
 

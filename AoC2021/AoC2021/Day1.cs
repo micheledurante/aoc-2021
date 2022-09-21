@@ -15,22 +15,14 @@ namespace AoC2021
             var part2 = 0;
 
             for (var i = 0; i < n.Length - 1; i++)
-            {
                 if (n[i + 1] > n[i])
-                {
                     part1++;
-                }
-            }
 
             float third = n.Length / 3;
 
             for (var i = 0; i < (Math.Floor(third) * 3) - 1; i++)
-            {
                 if (n[i + 3] > n[i])
-                {
                     part2++;
-                }
-            }
 
             return (part1, part2);
         }

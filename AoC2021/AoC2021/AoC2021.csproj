@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day9.cs" />
     <Compile Include="Day8.cs" />
     <Compile Include="Day7.cs" />
     <Compile Include="Day6.cs" />
@@ -128,10 +129,14 @@
     <EmbeddedResource Include="Data\day08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\day09.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="notes\day_03_notes.txt" />
     <Content Include="notes\day_03_sorted.txt" />
     <Content Include="notes\day_03_test_sorted.txt" />
     <Content Include="notes\day_04_notes.txt" />
+    <Content Include="notes\day_09_notes.txt" />
     <Content Include="notes\day_08_notes.txt" />
     <Content Include="notes\day_07_notes.txt" />
     <Content Include="notes\day_06_notes.txt" />
