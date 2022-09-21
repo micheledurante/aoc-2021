@@ -20,8 +20,8 @@ namespace AoC2021
             //Console.WriteLine("Day 4: " + Day4.Run(ReadInput("day04.txt")));
             //Console.WriteLine("Day 5: " + Day5.Run(ReadInput("day05.txt")));
             //Console.WriteLine("Day 6: " + Day6.Run(ReadInput("day06.txt")));
-            //Console.WriteLine("Day 7: " + Day7.Run(ReadInput("day07.txt")));
-            Console.WriteLine("Day 8: " + Day8.Run(ReadInput("day08.txt")));
+            Console.WriteLine("Day 7: " + Day7.Run(ReadInput("day07.txt")));
+            //Console.WriteLine("Day 8: " + Day8.Run(ReadInput("day08.txt")));
             Console.WriteLine("Press any key to quit...");
             Console.ReadKey();
         }

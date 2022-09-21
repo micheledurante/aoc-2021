@@ -16,18 +16,17 @@ namespace AoC2021
                 .Select(int.Parse)
                 .OrderBy(x => x)
                 .GroupBy(y => y)
-                .Select(z => (Pos: z.Key, Count: z.Count()))
-                .ToList();
+                .ToDictionary(z => z.Key, z => z.Count());
 
             var costs = new List<int>();
             var costs_exp = new List<int>();
 
-            foreach (var point in points)
-                costs.Add(points.Select(x => Math.Abs(x.Pos - point.Pos) * x.Count).Sum());
-
-            // triangular numbers, n(n + 1) / 2
-            foreach (var point in points)
-                costs_exp.Add(points.Select(x => Math.Abs(x.Pos - point.Pos) * (Math.Abs(x.Pos - point.Pos) + 1) / 2 * x.Count).Sum());
+            for (var i = 0; i <= points.Last().Key; i++)
+            {
+                costs.Add(points.Select(x => Math.Abs(x.Key - i) * x.Value).Sum());
+                // triangular numbers, n(n + 1) / 2
+                costs_exp.Add(points.Select(x => Math.Abs(x.Key - i) * (Math.Abs(x.Key - i) + 1) / 2 * x.Value).Sum());
+            }
 
             return (costs.Min(), costs_exp.Min());
         }
